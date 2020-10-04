@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 #include <string.h>
+#include <locale.h>
 
 /*
 34. Ler os dados pessoais de um conjunto de
@@ -21,55 +21,53 @@ struct candidata{
     char nome[50], naturalidade[50], estado[50];
     int numero_inscricao, peso;
     float altura;
-
 };
 
 int main()
 {
+    setlocale(LC_ALL,"");
 
-    struct candidata candidata1[50];
-    int i = 0, cont = 0;
-    char validacao = 'S';
+    struct candidata vet_candidatas[50];
+    int i=0, cont=0, validacao=0;
 
-    while(validacao == 'S'){
+    while(validacao != -1){
 
         printf("\nDigite o nome da candidata: \n");
         fflush(stdin);
-        fgets(candidata1[i].nome, 50, stdin);
+        fgets(vet_candidatas[i].nome, 50, stdin);
+
+        //printf("\n Nome cadastrado: %s \n", vet_candidatas[i].nome);
+
 
         printf("\nDigite a naturalidade da candidata: \n");
         fflush(stdin);
-        fgets(candidata1[i].naturalidade, 50, stdin);
+        fgets(vet_candidatas[i].naturalidade, 50, stdin);
 
         printf("\nDigite o estado de origem da candidata: \n");
         fflush(stdin);
-        fgets(candidata1[i].estado, 50, stdin);
+        fgets(vet_candidatas[i].estado, 50, stdin);
 
         printf("\n Numero de Inscricao: \n");
-        scanf("%d", &candidata1[i].numero_inscricao);
+        scanf("%d", &vet_candidatas[i].numero_inscricao);
 
-        printf("\n Peso: \n");
-        scanf("%d", &candidata1[i].peso);
+        printf("\n Peso(kg): \n");
+        scanf("%d", &vet_candidatas[i].peso);
 
         printf("\n Altura: \n");
-        scanf("%f", &candidata1[i].altura);
+        scanf("%f", &vet_candidatas[i].altura);
 
         i++;
         cont++;
 
         printf("\n--------------------------------------------\n");
-
-        printf("\n Deseja cadastrar mais uma candidata ? (S para sim | N para nao): \n");
-
-        scanf("%c", &validacao);
-
+        printf("\n Deseja cadastrar mais uma candidata ? (1 para sim | -1 para nao): \n");
+        scanf("%d", &validacao);
     }
-
 
     printf("\n Nomes das candidatas mais altas do que 1,70: \n");
     for(i=0;i<cont;i++){
-        if(candidata1[i].altura > 1.70){
-            printf("\n", candidata1[i].nome, "\n");
+        if(vet_candidatas[i].altura > 1.70){
+            printf("\n %s \n", vet_candidatas[i].nome);
         }
     }
 
