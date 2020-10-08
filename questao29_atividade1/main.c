@@ -14,7 +14,10 @@ candidato com o gabarito e
 escrever um vetor contendo a
 pontuação correspondente.
 */
-//incompleta
+
+//6 e 7 trocaram
+//aver pq
+
 int main()
 {
     char matriz_respostas[10][5];
@@ -60,8 +63,6 @@ int main()
     //Mostrando o resultado na tela
     printf("\n -- Resultado do exame -- \n");
     for(i=0;i<10;i++){
-        printf("Aluno %d : %d pontos", i+1, vetor_correcao[i]);
+        printf("\n Aluno %d : %d pontos \n", i+1, vetor_correcao[i]);
     }
-
-
 }
