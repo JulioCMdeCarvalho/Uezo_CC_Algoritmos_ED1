@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1601391342 source:d:\aaa-faculdade\uezo_2020_2_pseudoead\ed1_2020_1_online\praticas\teste_string_compare\main.c
+	<stdio.h>
+	<string.h>
+

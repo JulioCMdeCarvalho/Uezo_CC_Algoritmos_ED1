@@ -13,8 +13,6 @@ peso, naturalidade e estado. O número de inscrição igual a -1
 indica o fim do conjunto de candidatas.
 */
 
-//terminar depois
-
 
 struct candidata{
 
@@ -35,9 +33,6 @@ int main()
         printf("\nDigite o nome da candidata: \n");
         fflush(stdin);
         fgets(vet_candidatas[i].nome, 50, stdin);
-
-        //printf("\n Nome cadastrado: %s \n", vet_candidatas[i].nome);
-
 
         printf("\nDigite a naturalidade da candidata: \n");
         fflush(stdin);
@@ -70,6 +65,5 @@ int main()
             printf("\n %s \n", vet_candidatas[i].nome);
         }
     }
-
 
 }

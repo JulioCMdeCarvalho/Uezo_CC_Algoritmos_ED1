@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
+#include <locale.h>
 #include <string.h>
 
 /*
@@ -16,8 +16,6 @@ e preço.
 
 */
 
-//ver por que nao imprime
-
 struct produto{
     int codigo, qtd_estoque,qtd_minima;
     char descricao[50];
@@ -26,6 +24,8 @@ struct produto{
 
 int main()
 {
+    setlocale(LC_ALL,"");
+
     struct produto produto1[10];
     int i;
 
